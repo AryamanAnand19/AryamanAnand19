@@ -78,35 +78,20 @@ I'm actively looking for **more areas where technology and AI can genuinely help
 
 ---
 
-## 🧭 What kind of work excites me
+## 🧭 The problems I chase
 
-```mermaid
-mindmap
-  root((Aryaman))
-    LLM reliability & evals
-      Hallucination
-      Grounding
-      Trustworthy answers
-    RAG & recommenders
-      Retrieval
-      Reranking
-      Evidence selection
-    Civic tech
-      Accountability
-      Public data
-      Policy impact
-    Agents & conversational UX
-      Tool-using agents
-      Chat interfaces
-      Safety-critical decisions
-```
+<div align="center">
+<img src="assets/work-graph.svg" alt="Map of my interests around one goal: AI you can trust" width="100%"/>
+</div>
 
-- **🧠 LLM reliability & evals.** How do we *measure* whether a model is telling the truth, and how do we make it say "I don't know"?
-- **🔎 RAG & recommender systems.** Getting the right evidence in front of the model and the right item in front of the user.
-- **🏛️ Civic tech & accountability.** Using data and software to make institutions more transparent.
-- **🤖 Agents & conversational UX.** Systems that act, and interfaces that feel natural to use.
+Everything on that map orbits one question: **how do we build AI that is right, verifiable and actually useful to people?**
 
-**The common thread:** systems where being *right and verifiable* matters more than being impressive.
+- **🧠 Reliable LLMs & evals.** Measuring whether a model tells the truth, and making it say "I don't know" when it should.
+- **🕸️ Multi-agent systems.** Orchestration, tool use and planning that survive contact with production.
+- **🗣️ Voice & multilingual AI.** Real-time systems that talk to people in their own language, at scale.
+- **🔎 Retrieval & RAG.** Getting the right evidence in front of the model and the right item in front of the user.
+- **✈️ Safety-critical autonomy.** Decisions where mistakes are unacceptable, so they have to be explainable and checkable.
+- **🏛️ AI for public good.** Civic tech and accountability, where transparency beats trust-me.
 
 ---
 
