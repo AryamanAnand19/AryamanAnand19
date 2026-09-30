@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".5" r=".75">
+      <stop offset="0" stop-color="#0d1526"/><stop offset="1" stop-color="#04060c"/>
+    </radialGradient>
+    <radialGradient id="orb" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#bfe3ff"/>
+      <stop offset=".6" stop-color="#5b8cff" stop-opacity=".55"/><stop offset="1" stop-color="#5b8cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#7aa8ff" stop-opacity=".22"/><stop offset="1" stop-color="#7aa8ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9fd0ff" stop-opacity=".9"/><stop offset=".5" stop-color="#b9a4ff" stop-opacity=".45"/><stop offset="1" stop-color="#7ef0ff" stop-opacity=".8"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".10"/><stop offset="1" stop-color="#ffffff" stop-opacity=".02"/>
+    </linearGradient>
+    <linearGradient id="beam" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="900" y2="0">
+      <stop offset="0" stop-color="#9fd0ff" stop-opacity="0"/><stop offset=".5" stop-color="#cfe6ff" stop-opacity=".55"/><stop offset="1" stop-color="#9fd0ff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <path id="pA" d="M450,236 C450,170 450,120 450,86"/>
+    <path id="pB" d="M450,236 C560,230 660,190 745,146"/>
+    <path id="pC" d="M450,236 C560,242 660,290 745,334"/>
+    <path id="pD" d="M450,236 C450,300 450,350 450,394"/>
+    <path id="pE" d="M450,236 C340,242 240,290 155,334"/>
+    <path id="pF" d="M450,236 C340,230 240,190 155,146"/>
+  </defs>
+  <style>
+    .lbl { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:15px; fill:#eaf2ff; letter-spacing:.2px; }
+    .sub { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:11.5px; fill:#8fa3c7; letter-spacing:.4px; }
+    .core { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:10.5px; fill:#06101f; letter-spacing:2.5px; }
+    .rot1 { transform-origin:450px 236px; animation:spin 60s linear infinite; }
+    .rot2 { transform-origin:450px 236px; animation:spin 90s linear infinite reverse; }
+    .rot3 { transform-origin:450px 236px; animation:spin 45s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .breathe { transform-origin:450px 236px; animation:breathe 6s ease-in-out infinite; }
+    @keyframes breathe { 50% { transform:scale(1.08); } }
+    .pill { animation:drift 7s ease-in-out infinite; }
+    .p2{animation-delay:-1.2s}.p3{animation-delay:-2.4s}.p4{animation-delay:-3.6s}.p5{animation-delay:-4.8s}.p6{animation-delay:-6s}
+    @keyframes drift { 50% { transform:translateY(-3px); } }
+    .tw { animation:tw 4s ease-in-out infinite; } .tw2 { animation-delay:-1.3s } .tw3 { animation-delay:-2.6s }
+    @keyframes tw { 50% { opacity:.15; } }
+  </style>
+
+  <rect width="900" height="480" rx="18" fill="url(#bg)"/>
+
+  <!-- stars -->
+  <g fill="#cfe6ff">
+    <circle cx="70" cy="60" r="1.2" class="tw" opacity=".7"/><circle cx="820" cy="52" r="1" class="tw tw2" opacity=".7"/>
+    <circle cx="300" cy="30" r="1" class="tw tw3" opacity=".6"/><circle cx="610" cy="440" r="1.2" class="tw" opacity=".7"/>
+    <circle cx="90" cy="430" r="1" class="tw tw2" opacity=".6"/><circle cx="860" cy="250" r="1.3" class="tw tw3" opacity=".7"/>
+    <circle cx="40" cy="240" r="1" class="tw" opacity=".6"/><circle cx="380" cy="455" r="1" class="tw tw2" opacity=".5"/>
+    <circle cx="700" cy="24" r="1" class="tw tw3" opacity=".6"/><circle cx="220" cy="452" r="1.2" class="tw" opacity=".6"/>
+  </g>
+
+  <!-- ambient halo + orbital rings -->
+  <circle cx="450" cy="236" r="190" fill="url(#halo)"/>
+  <g fill="none" stroke="#9fd0ff" stroke-width="1">
+    <ellipse cx="450" cy="236" rx="150" ry="150" stroke-opacity=".12"/>
+    <ellipse cx="450" cy="236" rx="118" ry="118" stroke-opacity=".18" class="rot1" stroke-dasharray="1 5"/>
+    <ellipse cx="450" cy="236" rx="200" ry="70" stroke-opacity=".16" class="rot3" transform="rotate(-18 450 236)"/>
+    <ellipse cx="450" cy="236" rx="200" ry="70" stroke-opacity=".12" class="rot2" transform="rotate(24 450 236)"/>
+  </g>
+  <!-- orbiting satellites -->
+  <g class="rot1"><circle cx="568" cy="236" r="3" fill="#7ef0ff"/></g>
+  <g class="rot2"><circle cx="450" cy="86" r="2.5" fill="#b9a4ff"/></g>
+
+  <!-- links -->
+  <g fill="none" stroke="url(#rim)" stroke-width="1.2" stroke-opacity=".55">
+    <use href="#pA"/><use href="#pB"/><use href="#pC"/><use href="#pD"/><use href="#pE"/><use href="#pF"/>
+  </g>
+  <g fill="#fff">
+    <circle r="2.6" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pA"/></animateMotion></circle>
+    <circle r="2.6" opacity=".95"><animateMotion dur="3.8s" begin=".6s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pB"/></animateMotion></circle>
+    <circle r="2.6" opacity=".95"><animateMotion dur="3.4s" begin="1.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pC"/></animateMotion></circle>
+    <circle r="2.6" opacity=".95"><animateMotion dur="3.8s" begin="1.8s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pD"/></animateMotion></circle>
+    <circle r="2.6" opacity=".95"><animateMotion dur="3.4s" begin="2.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pE"/></animateMotion></circle>
+    <circle r="2.6" opacity=".95"><animateMotion dur="3.8s" begin="3s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pF"/></animateMotion></circle>
+  </g>
+
+  <!-- core orb -->
+  <g class="breathe">
+    <circle cx="450" cy="236" r="62" fill="url(#orb)" filter="url(#soft)" opacity=".9"/>
+    <circle cx="450" cy="236" r="40" fill="url(#orb)"/>
+    <circle cx="450" cy="236" r="41" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="1"/>
+  </g>
+  <text x="450" y="233" text-anchor="middle" class="core">TRUSTWORTHY</text>
+  <text x="450" y="247" text-anchor="middle" class="core">AI</text>
+
+  <!-- glass pills -->
+  <g class="pill">
+    <rect x="345" y="52" width="210" height="68" rx="18" fill="url(#glass)" stroke="url(#rim)" stroke-width="1"/>
+    <text x="450" y="82" text-anchor="middle" class="lbl">Reliable LLMs &amp; Evals</text>
+    <text x="450" y="101" text-anchor="middle" class="sub">Hallucination · Grounding · Evals</text>
+  </g>
+  <g class="pill p2">
+    <rect x="645" y="112" width="210" height="68" rx="18" fill="url(#glass)" stroke="url(#rim)" stroke-width="1"/>
+    <text x="750" y="142" text-anchor="middle" class="lbl">Multi-Agent Systems</text>
+    <text x="750" y="161" text-anchor="middle" class="sub">Orchestration · Tools · Planning</text>
+  </g>
+  <g class="pill p3">
+    <rect x="645" y="300" width="210" height="68" rx="18" fill="url(#glass)" stroke="url(#rim)" stroke-width="1"/>
+    <text x="750" y="330" text-anchor="middle" class="lbl">Voice &amp; Multilingual AI</text>
+    <text x="750" y="349" text-anchor="middle" class="sub">Real-time · Production scale</text>
+  </g>
+  <g class="pill p4">
+    <rect x="345" y="360" width="210" height="68" rx="18" fill="url(#glass)" stroke="url(#rim)" stroke-width="1"/>
+    <text x="450" y="390" text-anchor="middle" class="lbl">Safety-Critical Autonomy</text>
+    <text x="450" y="409" text-anchor="middle" class="sub">Air traffic · Verifiable decisions</text>
+  </g>
+  <g class="pill p5">
+    <rect x="45" y="300" width="210" height="68" rx="18" fill="url(#glass)" stroke="url(#rim)" stroke-width="1"/>
+    <text x="150" y="330" text-anchor="middle" class="lbl">Retrieval &amp; RAG</text>
+    <text x="150" y="349" text-anchor="middle" class="sub">Reranking · Evidence · Recsys</text>
+  </g>
+  <g class="pill p6">
+    <rect x="45" y="112" width="210" height="68" rx="18" fill="url(#glass)" stroke="url(#rim)" stroke-width="1"/>
+    <text x="150" y="142" text-anchor="middle" class="lbl">AI for Public Good</text>
+    <text x="150" y="161" text-anchor="middle" class="sub">Civic tech · Accountability</text>
+  </g>
+</svg>
