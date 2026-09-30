@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f1a"/>
+      <stop offset="1" stop-color="#140a2a"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00f0ff"/>
+      <stop offset="0.5" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#ff3df0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#1d2540" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="240" rx="16" fill="url(#bg)"/>
+  <rect width="900" height="240" rx="16" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- neural-net nodes -->
+  <g stroke="#00f0ff" stroke-opacity="0.25" stroke-width="1">
+    <line x1="620" y1="40" x2="700" y2="90"/><line x1="620" y1="40" x2="700" y2="150"/>
+    <line x1="620" y1="120" x2="700" y2="90"/><line x1="620" y1="120" x2="700" y2="150"/>
+    <line x1="620" y1="200" x2="700" y2="90"/><line x1="620" y1="200" x2="700" y2="150"/>
+    <line x1="700" y1="90" x2="790" y2="60"/><line x1="700" y1="90" x2="790" y2="130"/>
+    <line x1="700" y1="150" x2="790" y2="130"/><line x1="700" y1="150" x2="790" y2="200"/>
+    <line x1="790" y1="60" x2="860" y2="120"/><line x1="790" y1="130" x2="860" y2="120"/><line x1="790" y1="200" x2="860" y2="120"/>
+  </g>
+  <g filter="url(#glow)" fill="#00f0ff">
+    <circle cx="620" cy="40" r="6"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="620" cy="120" r="6"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin=".4s" repeatCount="indefinite"/></circle>
+    <circle cx="620" cy="200" r="6"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin=".8s" repeatCount="indefinite"/></circle>
+  </g>
+  <g filter="url(#glow)" fill="#7c5cff">
+    <circle cx="700" cy="90" r="7"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin=".2s" repeatCount="indefinite"/></circle>
+    <circle cx="700" cy="150" r="7"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin=".6s" repeatCount="indefinite"/></circle>
+  </g>
+  <g filter="url(#glow)" fill="#ff3df0">
+    <circle cx="790" cy="60" r="7"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="790" cy="130" r="7"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+    <circle cx="790" cy="200" r="7"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" begin="1.4s" repeatCount="indefinite"/></circle>
+    <circle cx="860" cy="120" r="9" fill="#00ffa3"><animate attributeName="r" values="9;13;9" dur="2s" repeatCount="indefinite"/></circle>
+  </g>
+  <!-- signal pulse travelling the net -->
+  <circle r="4" fill="#fff" filter="url(#glow)">
+    <animateMotion dur="3.2s" repeatCount="indefinite" path="M620,40 L700,90 L790,130 L860,120"/>
+  </circle>
+  <circle r="4" fill="#fff" filter="url(#glow)">
+    <animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M620,200 L700,150 L790,60 L860,120"/>
+  </circle>
+
+  <text x="48" y="92" font-family="'Segoe UI',Arial,sans-serif" font-size="20" fill="#7c8aa8" letter-spacing="4">&gt;_ HELLO, WORLD. I'M</text>
+  <text x="46" y="150" font-family="'Segoe UI',Arial,sans-serif" font-size="64" font-weight="800" fill="url(#neon)" filter="url(#glow)">Aryaman Anand</text>
+  <text x="48" y="192" font-family="Consolas,'Courier New',monospace" font-size="20" fill="#00ffa3">AI/ML engineer · multi-agent LLM systems · MSc AI @ NTU</text>
+  <rect x="48" y="204" width="360" height="3" rx="2" fill="url(#neon)">
+    <animate attributeName="width" values="0;360;360;0" keyTimes="0;.4;.8;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+</svg>

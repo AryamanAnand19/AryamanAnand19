@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+  <style>
+    .t { font-family: Consolas,'Courier New',monospace; font-size: 17px; }
+    .p { fill: #00ffa3; } .c { fill: #7c8aa8; } .k { fill: #ff3df0; } .v { fill: #00f0ff; } .w { fill: #e6edf3; }
+    .l { opacity: 0; }
+    .l1 { animation: show .01s 0.4s forwards; }
+    .l2 { animation: show .01s 1.4s forwards; }
+    .l3 { animation: show .01s 2.2s forwards; }
+    .l4 { animation: show .01s 3.0s forwards; }
+    .l5 { animation: show .01s 3.8s forwards; }
+    .l6 { animation: show .01s 4.6s forwards; }
+    .l7 { animation: show .01s 5.4s forwards; }
+    @keyframes show { to { opacity: 1; } }
+    .cur { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+  <rect width="900" height="300" rx="12" fill="#0d1117" stroke="#30363d"/>
+  <rect width="900" height="36" rx="12" fill="#161b22"/>
+  <circle cx="24" cy="18" r="6" fill="#ff5f56"/><circle cx="46" cy="18" r="6" fill="#ffbd2e"/><circle cx="68" cy="18" r="6" fill="#27c93f"/>
+  <text x="380" y="23" class="t c" font-size="13">aryaman@world: ~</text>
+
+  <g class="t">
+    <text x="24" y="70"  class="l l1"><tspan class="p">$</tspan> <tspan class="w">whoami</tspan></text>
+    <text x="24" y="94"  class="l l2 v">aryaman — AI/ML engineer &amp; student, builder of things that should exist</text>
+    <text x="24" y="128" class="l l3"><tspan class="p">$</tspan> <tspan class="w">cat now.json</tspan></text>
+    <text x="24" y="152" class="l l4"><tspan class="c">{</tspan> <tspan class="k">"building"</tspan><tspan class="c">:</tspan> <tspan class="v">["Make India Accountable", "automated air traffic controller"]</tspan><tspan class="c">,</tspan></text>
+    <text x="24" y="176" class="l l5">  <tspan class="k">"obsessed_with"</tspan><tspan class="c">:</tspan> <tspan class="v">["LLM reliability", "RAG", "agents"]</tspan><tspan class="c">,</tspan></text>
+    <text x="24" y="200" class="l l6">  <tspan class="k">"looking_for"</tspan><tspan class="c">:</tspan> <tspan class="v">"problems worth solving for humanity"</tspan> <tspan class="c">}</tspan></text>
+    <text x="24" y="242" class="l l7"><tspan class="p">$</tspan> <tspan class="w">./collaborate --with you</tspan><tspan class="cur w"> █</tspan></text>
+  </g>
+</svg>
