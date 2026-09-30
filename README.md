@@ -71,8 +71,6 @@ I'm actively looking for **more areas where technology and AI can genuinely help
 | **ShieldCall** | AI-powered real-time phone call detection and shielding system (Python) | Creator |
 | **promptryt** | AI prompt co-pilot for ChatGPT, Claude, Gemini, Copilot, DeepSeek and Manus; generates Direct, Well Rounded and Technical prompt variants, no account needed (JavaScript) | Creator |
 | **Needle** (TechJam 2026, Track 4) | Conversational storefront and retrieval-driven recommender for a hackathon challenge | Semantic robustness research, independent result reproduction, robustness harness |
-| **Recova** | RAG-based recommender system | Cross-encoder reranking and evidence selection |
-| **EpistemicLLM** | Study of what LLMs actually *know* vs. hallucinate | Controlled synthetic exposure experiments |
 | **SENTINEL** | Autonomous air traffic control demo on a live radar canvas: STCA conflict prediction, arrival sequencing, holding stacks, emergencies, voice R/T | Sole builder (10 JS modules, real flight physics) |
 | **Breast-cancer classifier** | SVM + MLP on WDBC with EER and ROC analysis | Full pipeline and evaluation |
 
@@ -139,14 +137,9 @@ HyperVerge: AI/ML engineering.
 
 ---
 
-## 📊 GitHub stats
+## 🐍 Contribution snake
 
 <div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=AryamanAnand19&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0b0f1a" alt="GitHub stats"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AryamanAnand19&layout=compact&theme=tokyonight&hide_border=true&bg_color=0b0f1a" alt="Top languages"/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=AryamanAnand19&theme=tokyonight&hide_border=true&background=0b0f1a" alt="Streak"/>
 
 <img src="https://raw.githubusercontent.com/AryamanAnand19/AryamanAnand19/output/snake-dark.svg" alt="Contribution snake" width="100%"/>
 
