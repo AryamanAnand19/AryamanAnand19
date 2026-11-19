@@ -6,7 +6,7 @@
 <a href="#featured-projects">Projects</a> ·
 <a href="#experience">Experience</a> ·
 <a href="#education">Education</a> ·
-<a href="#tech-stack">Stack</a> ·
+<a href="#languages-and-tools">Stack</a> ·
 <a href="https://v0-interactive-portfolio-website-wine.vercel.app/">Portfolio</a> ·
 <a href="https://www.linkedin.com/in/aryamananand">LinkedIn</a> ·
 <a href="mailto:aryaman.anand@gmail.com">Email</a>
@@ -14,11 +14,13 @@
 
 </div>
 
-**AI/ML engineer and MSc AI student at NTU Singapore.** I build and evaluate **LLM agents, RAG systems and voice AI** that have to work with real users. Before the MSc I owned the architecture of production **multi-agent** voice and chat systems at Hotelzify and built the **evaluation harness** that scored live traffic turn by turn.
+**AI/ML engineer and MSc AI student at NTU Singapore.** I build and evaluate **generative AI** that has to work with real users: **agentic LLM systems, RAG and conversational voice AI**. Before the MSc I owned the architecture of production **multi-agent** voice and chat systems at Hotelzify and built the **evaluation harness** that scored live traffic turn by turn.
 
 I care about how AI behaves outside the demo: **grounding, evaluation and safe failure.**
 
 > **Open to AI/ML internships from January 2027 and full-time roles from August 2027, in Singapore.** The quickest way to reach me is [email](mailto:aryaman.anand@gmail.com).
+
+<img src="assets/carousel.svg" alt="Rotating highlights, 15 seconds each. Now: MSc AI at NTU and building Tether. Hotelzify: about 4,500 conversations a day, 82% resolved without handoff, 71% fewer name misrecognitions. Needle: TechnicalScore 0.9785, HR@10 1.000, zero LLM calls. Recova: nDCG@3 0.546 to 0.636, unsupported claims 13.8% to 6.4%. EpistemicLLM: +46 points from 2 to 5 exposures, abstention 32 to 0." width="100%"/>
 
 <img src="assets/impact.svg" alt="Impact at a glance: about 4,500 conversations a day in production; 82% resolved without human handoff; 0.9785 TechnicalScore on TikTok TechJam Needle; 71% fewer name and location misrecognitions across 40+ languages." width="100%"/>
 
@@ -38,7 +40,7 @@ I care about how AI behaves outside the demo: **grounding, evaluation and safe f
 <td width="50%" valign="top">
 
 ### [Needle](https://devpost.com/software/needle-0rae23)
-**Conversational product search with no LLM**
+**Conversational product search with no LLM**<br/>
 <sub>TikTok TechJam 2026 · Track 4 · team entry</sub>
 
 Finds one hidden product in a **50,000-item catalogue** within ten conversational turns, using a ledger of wants, exclusions and replacements instead of a raw transcript.
@@ -51,14 +53,14 @@ Finds one hidden product in a **50,000-item catalogue** within ten conversationa
 <td width="50%" valign="top">
 
 ### Recova
-**RAG recommender with cited, verified answers**
+**RAG recommender with cited, verified answers**<br/>
 <sub>NTU AI6127 NLP · six-person team</sub>
 
 Hybrid **BM25 + dense retrieval** over **2.3M passages**, **cross-encoder reranking**, a local LLM and a claim-level verifier. Every recommendation cites the review passages behind it.
 
 **nDCG@3 0.546 → 0.636 · unsupported claims 13.8% → 6.4%**
 
-`RAG` `hybrid search` `reranking` `FAISS` `faithfulness`
+`RAG` `recommender systems` `hybrid search` `reranking` `FAISS`
 
 </td>
 </tr>
@@ -66,7 +68,7 @@ Hybrid **BM25 + dense retrieval** over **2.3M passages**, **cross-encoder rerank
 <td width="50%" valign="top">
 
 ### EpistemicLLM
-**How many times must a model see a fact?**
+**How many times must a model see a fact?**<br/>
 <sub>NTU AI6130 LLMs · six-person team</sub>
 
 A controlled **LoRA fine-tuning** study of **Qwen2.5-0.5B** on 600 invented facts. Accuracy grows gradually with exposure, but training **erased abstention** entirely.
@@ -79,7 +81,7 @@ A controlled **LoRA fine-tuning** study of **Qwen2.5-0.5B** on 600 invented fact
 <td width="50%" valign="top">
 
 ### [Tether](https://tether-care.vercel.app)
-**Closing the loop on incidental clinical findings**
+**Closing the loop on incidental clinical findings**<br/>
 <sub>Personal project · ongoing</sub>
 
 Over 60% of incidental findings are lost to follow-up. Tether pairs a **retrieval-grounded assistant on the Claude API** with **interpretable, guideline-cited** risk classification.
@@ -91,8 +93,6 @@ Over 60% of incidental findings are lost to follow-up. Tether pairs a **retrieva
 </td>
 </tr>
 </table>
-
-<img src="assets/terminal.svg" alt="Needle official evaluator output (team entry): HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785, zero LLM calls" width="100%"/>
 
 <details>
 <summary><b>Needle: engineering details</b></summary>
@@ -190,7 +190,7 @@ Over 60% of incidental findings are lost to follow-up. Tether pairs a **retrieva
 
 | Module | Work | Keywords |
 |---|---|---|
-| AI6103 Deep learning | EfficientNetV2-S hyperparameter study on dog-breed classification; 120-run evaluation of a lightweight image classifier | `PyTorch` `CNN` `image classification` |
+| AI6103 Deep learning | EfficientNetV2-S hyperparameter study on dog-breed classification; 120-run evaluation of a lightweight image classifier | `PyTorch` `CNN` `computer vision` |
 | AI6130 Large language models | LLM benchmark evaluation; LoRA versus adapter fine-tuning on math reasoning; EpistemicLLM | `LoRA` `PEFT` `LLM evaluation` |
 | AI6127 Natural language processing | Recova RAG recommender with citations and claim-level verification | `RAG` `reranking` `retrieval` |
 | AI6124 Neural and fuzzy systems | SVM and MLP classifiers scored by EER and ROC; fuzzy, LVQ and POPFNN models; pre-registered LSTM study | `classification` `LSTM` `fuzzy systems` |
@@ -210,17 +210,36 @@ Over 60% of incidental findings are lost to follow-up. Tether pairs a **retrieva
 - **Abstention and grounded generation**: models that cite evidence and know when to say "I don't know".
 - **Conversational and voice agents** that hold up in production.
 - **Parameter-efficient fine-tuning** (LoRA, adapters) and what it does to model behaviour.
+- **AI for public good**: civic tech that makes public data checkable ([Make India Accountable](https://github.com/AryamanAnand19/make-india-accountable)).
 
 ---
 
-## Tech stack
+## Languages and tools
+
+<div align="center">
+
+<sub><b>LANGUAGES</b></sub><br/>
+<img alt="Python" src="https://img.shields.io/badge/Python-101c36?style=for-the-badge&logo=python&logoColor=white"/> <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-101c36?style=for-the-badge&logo=typescript&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-101c36?style=for-the-badge&logo=javascript&logoColor=white"/> <img alt="SQL" src="https://img.shields.io/badge/SQL-101c36?style=for-the-badge&logo=postgresql&logoColor=white"/> <img alt="C++" src="https://img.shields.io/badge/C%2B%2B-101c36?style=for-the-badge&logo=cplusplus&logoColor=white"/>
+<br/><br/>
+
+<sub><b>AI AND ML</b></sub><br/>
+<img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-101c36?style=for-the-badge&logo=pytorch&logoColor=white"/> <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-101c36?style=for-the-badge&logo=scikitlearn&logoColor=white"/> <img alt="LangChain" src="https://img.shields.io/badge/LangChain-101c36?style=for-the-badge&logo=langchain&logoColor=white"/> <img alt="Claude API" src="https://img.shields.io/badge/Claude%20API-101c36?style=for-the-badge&logo=anthropic&logoColor=white"/> <img alt="OpenAI API" src="https://img.shields.io/badge/OpenAI%20API-101c36?style=for-the-badge"/> <img alt="MCP" src="https://img.shields.io/badge/MCP-101c36?style=for-the-badge"/> <img alt="LoRA / PEFT" src="https://img.shields.io/badge/LoRA%20%2F%20PEFT-101c36?style=for-the-badge"/> <img alt="Pandas" src="https://img.shields.io/badge/Pandas-101c36?style=for-the-badge&logo=pandas&logoColor=white"/> <img alt="NumPy" src="https://img.shields.io/badge/NumPy-101c36?style=for-the-badge&logo=numpy&logoColor=white"/>
+<br/><br/>
+
+<sub><b>ENGINEERING</b></sub><br/>
+<img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-101c36?style=for-the-badge&logo=fastapi&logoColor=white"/> <img alt="Flask" src="https://img.shields.io/badge/Flask-101c36?style=for-the-badge&logo=flask&logoColor=white"/> <img alt="Next.js" src="https://img.shields.io/badge/Next.js-101c36?style=for-the-badge&logo=nextdotjs&logoColor=white"/> <img alt="React" src="https://img.shields.io/badge/React-101c36?style=for-the-badge&logo=react&logoColor=white"/> <img alt="Docker" src="https://img.shields.io/badge/Docker-101c36?style=for-the-badge&logo=docker&logoColor=white"/> <img alt="AWS" src="https://img.shields.io/badge/AWS-101c36?style=for-the-badge"/> <img alt="GitHub Actions" src="https://img.shields.io/badge/GitHub%20Actions-101c36?style=for-the-badge&logo=githubactions&logoColor=white"/> <img alt="Vercel" src="https://img.shields.io/badge/Vercel-101c36?style=for-the-badge&logo=vercel&logoColor=white"/>
+<br/><br/>
+
+</div>
+
+### Full stack, for searchability
 
 | Area | Tools and methods |
 |---|---|
-| **LLMs and agents** | Multi-agent orchestration · tool use · MCP · LangChain · prompt and context engineering · guardrails · Claude API · OpenAI API |
-| **Retrieval and evaluation** | RAG · hybrid search (BM25 + dense, RRF) · cross-encoder reranking · FAISS · Pinecone · Chroma · LLM evaluation · faithfulness checking |
-| **ML and fine-tuning** | PyTorch · LoRA / PEFT · CNN · LSTM · scikit-learn · Pandas · NumPy |
-| **Voice AI** | Real-time speech pipelines · barge-in handling · TTS pronunciation lexicons |
+| **LLMs and agents** | Generative AI · agentic AI · multi-agent orchestration · tool use · MCP · LangChain · prompt and context engineering · guardrails · Claude API · OpenAI API |
+| **Retrieval and evaluation** | RAG · recommender systems · hybrid search (BM25 + dense, RRF) · cross-encoder reranking · FAISS · Pinecone · Chroma · LLM evaluation · faithfulness checking |
+| **ML and fine-tuning** | PyTorch · deep learning · computer vision · NLP · LoRA / PEFT · CNN · LSTM · scikit-learn · Pandas · NumPy |
+| **Voice and conversational AI** | Conversational AI · speech AI · real-time speech pipelines · barge-in handling · TTS pronunciation lexicons |
 | **Languages** | Python · TypeScript · JavaScript · SQL · C++ |
 | **Engineering** | FastAPI · Flask · Next.js · React · Docker · AWS · GitHub Actions · CI/CD · Vercel |
 
