@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240" role="img" aria-label="Rotating highlights. Now: MSc AI at NTU Singapore and building Tether, a grounded clinical-findings assistant. Hotelzify: about 4,500 conversations a day, 82% resolved without handoff, 71% fewer name misrecognitions. Needle: TechnicalScore 0.9785, HR@10 1.000, zero LLM calls. Recova: nDCG@3 0.546 to 0.636, unsupported claims 13.8% to 6.4%. EpistemicLLM: plus 46 points from 2 to 5 exposures, abstention 32 to 0.">
+  <defs>
+    <radialGradient id="bg" cx=".8" cy=".2" r="1.1">
+      <stop offset="0" stop-color="#111f3d"/><stop offset="1" stop-color="#04060c"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9fd0ff" stop-opacity=".8"/><stop offset=".5" stop-color="#b9a4ff" stop-opacity=".35"/><stop offset="1" stop-color="#7ef0ff" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".09"/><stop offset="1" stop-color="#ffffff" stop-opacity=".02"/>
+    </linearGradient>
+    <linearGradient id="num" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a9c8ff"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7ef0ff"/><stop offset="1" stop-color="#b9a4ff"/>
+    </linearGradient>
+    <radialGradient id="orb" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".3" stop-color="#bfe3ff"/>
+      <stop offset=".65" stop-color="#5b8cff" stop-opacity=".45"/><stop offset="1" stop-color="#5b8cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .eb { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:12px; fill:#7ea6ff; letter-spacing:3px; }
+    .ti { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:700; font-size:27px; fill:#eef4ff; letter-spacing:-.3px; }
+    .de { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:14.5px; fill:#9fb2d6; }
+    .n  { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:700; font-size:26px; fill:url(#num); }
+    .k  { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:12.5px; fill:#cfdcf5; }
+    .slide { opacity:0; }
+    .s1 { opacity:1; }
+    .dot { fill:#9fd0ff; opacity:.25; }
+    .d1 { opacity:1; }
+    @media (prefers-reduced-motion: no-preference) {
+      .slide, .s1 { opacity:0; animation:cycle 75s ease-in-out infinite both; }
+      .dot, .d1 { opacity:.25; animation:dot 75s linear infinite both; }
+      .s2, .d2 { animation-delay:15s; } .s3, .d3 { animation-delay:30s; }
+      .s4, .d4 { animation-delay:45s; } .s5, .d5 { animation-delay:60s; }
+      .prog { transform-origin:40px 0; animation:prog 15s linear infinite; }
+      .orb { transform-origin:790px 118px; animation:breathe 7s ease-in-out infinite; }
+      .ring { transform-origin:790px 118px; animation:spin 50s linear infinite; }
+    }
+    @keyframes cycle {
+      0%     { opacity:0; transform:translateX(18px); }
+      1.6%   { opacity:1; transform:translateX(0); }
+      18.4%  { opacity:1; transform:translateX(0); }
+      20%    { opacity:0; transform:translateX(-18px); }
+      100%   { opacity:0; transform:translateX(-18px); }
+    }
+    @keyframes dot { 0%,19.9% { opacity:1; } 20%,100% { opacity:.25; } }
+    @keyframes prog { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+    @keyframes breathe { 50% { transform:scale(1.1); } }
+    @keyframes spin { to { transform:rotate(360deg); } }
+  </style>
+
+  <rect width="900" height="240" rx="18" fill="url(#bg)"/>
+  <rect x=".5" y=".5" width="899" height="239" rx="17.5" fill="none" stroke="#9fd0ff" stroke-opacity=".18"/>
+
+  <!-- ambient orb, right -->
+  <g fill="none" stroke="#9fd0ff" stroke-width="1">
+    <circle cx="790" cy="118" r="70" stroke-opacity=".12"/>
+    <ellipse cx="790" cy="118" rx="96" ry="34" stroke-opacity=".16" class="ring" transform="rotate(-20 790 118)"/>
+  </g>
+  <g class="orb"><circle cx="790" cy="118" r="38" fill="url(#orb)"/></g>
+
+  <!-- slide 1: now -->
+  <g class="slide s1">
+    <text x="40" y="52" class="eb">RIGHT NOW</text>
+    <text x="40" y="90" class="ti">MSc AI at NTU · building Tether</text>
+    <text x="40" y="116" class="de">A retrieval-grounded, guideline-cited assistant so incidental findings are not lost to follow-up.</text>
+    <g transform="translate(40 138)">
+      <rect width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="16" y="31" class="n">Jan 2027</text><text x="16" y="50" class="k">internships open</text>
+      <rect x="206" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="222" y="31" class="n">Aug 2027</text><text x="222" y="50" class="k">full-time roles</text>
+      <rect x="412" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="428" y="31" class="n">Claude API</text><text x="428" y="50" class="k">grounding · fallback</text>
+    </g>
+  </g>
+
+  <!-- slide 2: Hotelzify -->
+  <g class="slide s2">
+    <text x="40" y="52" class="eb">IN PRODUCTION · HOTELZIFY</text>
+    <text x="40" y="90" class="ti">Multi-agent voice and chat AI</text>
+    <text x="40" y="116" class="de">Subagent orchestration, a live evaluation harness and a real-time speech layer, across five countries.</text>
+    <g transform="translate(40 138)">
+      <rect width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="16" y="31" class="n">~4,500</text><text x="16" y="50" class="k">conversations a day</text>
+      <rect x="206" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="222" y="31" class="n">82%</text><text x="222" y="50" class="k">no human handoff</text>
+      <rect x="412" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="428" y="31" class="n">−71%</text><text x="428" y="50" class="k">name misrecognition</text>
+    </g>
+  </g>
+
+  <!-- slide 3: Needle -->
+  <g class="slide s3">
+    <text x="40" y="52" class="eb">TIKTOK TECHJAM 2026 · TEAM ENTRY</text>
+    <text x="40" y="90" class="ti">Needle: conversational search, no LLM</text>
+    <text x="40" y="116" class="de">One hidden product in a 50,000-item catalogue, found within ten turns. Fully offline.</text>
+    <g transform="translate(40 138)">
+      <rect width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="16" y="31" class="n">0.9785</text><text x="16" y="50" class="k">TechnicalScore</text>
+      <rect x="206" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="222" y="31" class="n">1.000</text><text x="222" y="50" class="k">HR@10 · MRR 0.9967</text>
+      <rect x="412" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="428" y="31" class="n">0</text><text x="428" y="50" class="k">LLM calls · zero tokens</text>
+    </g>
+  </g>
+
+  <!-- slide 4: Recova -->
+  <g class="slide s4">
+    <text x="40" y="52" class="eb">NTU AI6127 · RAG</text>
+    <text x="40" y="90" class="ti">Recova: cited, verified recommendations</text>
+    <text x="40" y="116" class="de">Hybrid retrieval over 2.3M passages, cross-encoder reranking and a claim-level verifier.</text>
+    <g transform="translate(40 138)">
+      <rect width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="16" y="31" class="n">0.636</text><text x="16" y="50" class="k">nDCG@3 (from 0.546)</text>
+      <rect x="206" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="222" y="31" class="n">6.4%</text><text x="222" y="50" class="k">unsupported (from 13.8%)</text>
+      <rect x="412" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="428" y="31" class="n">κ 0.931</text><text x="428" y="50" class="k">six blind annotators</text>
+    </g>
+  </g>
+
+  <!-- slide 5: EpistemicLLM -->
+  <g class="slide s5">
+    <text x="40" y="52" class="eb">NTU AI6130 · HALLUCINATION RESEARCH</text>
+    <text x="40" y="90" class="ti">EpistemicLLM: when do models know?</text>
+    <text x="40" y="116" class="de">LoRA fine-tuning of Qwen2.5-0.5B on 600 invented facts, robust across seeds and wordings.</text>
+    <g transform="translate(40 138)">
+      <rect width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="16" y="31" class="n">+46 pts</text><text x="16" y="50" class="k">from 2 to 5 exposures</text>
+      <rect x="206" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="222" y="31" class="n">49 / 100</text><text x="222" y="50" class="k">facts learned (from 0)</text>
+      <rect x="412" width="190" height="62" rx="12" fill="url(#glass)" stroke="url(#rim)"/><text x="428" y="31" class="n">32 → 0</text><text x="428" y="50" class="k">"I don't know" answers</text>
+    </g>
+  </g>
+
+  <!-- progress + dots -->
+  <rect x="40" y="220" width="820" height="2" rx="1" fill="#9fd0ff" opacity=".12"/>
+  <rect x="40" y="220" width="820" height="2" rx="1" fill="url(#bar)" class="prog" opacity=".8"/>
+  <g transform="translate(810 46)">
+    <circle cx="0" cy="0" r="3.5" class="dot d1"/><circle cx="12" cy="0" r="3.5" class="dot d2"/>
+    <circle cx="24" cy="0" r="3.5" class="dot d3"/><circle cx="36" cy="0" r="3.5" class="dot d4"/>
+    <circle cx="48" cy="0" r="3.5" class="dot d5"/>
+  </g>
+</svg>
