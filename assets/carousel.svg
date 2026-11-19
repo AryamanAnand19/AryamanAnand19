@@ -46,7 +46,7 @@
       20%    { opacity:0; transform:translateX(-18px); }
       100%   { opacity:0; transform:translateX(-18px); }
     }
-    @keyframes dot { 0%,19.9% { opacity:1; } 20%,100% { opacity:.25; } }
+    @keyframes dot { 0% { opacity:.25; } 0.5%,19.5% { opacity:1; } 20%,100% { opacity:.25; } }
     @keyframes prog { from { transform:scaleX(0); } to { transform:scaleX(1); } }
     @keyframes breathe { 50% { transform:scale(1.1); } }
     @keyframes spin { to { transform:rotate(360deg); } }
