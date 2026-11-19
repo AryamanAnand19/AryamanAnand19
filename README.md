@@ -1,148 +1,127 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Aryaman Anand: AI/ML engineer, student, tech-for-humanity builder" width="100%"/>
-
-<a href="https://github.com/AryamanAnand19">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F0FF&center=true&vCenter=true&width=760&lines=Making+LLMs+tell+the+truth+%F0%9F%A7%A0;Building+civic+tech+that+holds+power+accountable+%F0%9F%87%AE%F0%9F%87%B3;Teaching+machines+to+direct+air+traffic+%E2%9C%88%EF%B8%8F;Hunting+for+problems+worth+solving+for+humanity+%F0%9F%8C%8D" alt="Typing animation"/>
-</a>
-
-<br/>
-
-![Profile views](https://komarev.com/ghpvc/?username=AryamanAnand19&color=7c5cff&style=for-the-badge&label=VISITORS)
-![NTU](https://img.shields.io/badge/NTU-MSc%20AI-c8102e?style=for-the-badge&labelColor=0b0f1a)
-![Focus](https://img.shields.io/badge/FOCUS-AI%20%2F%20ML-00f0ff?style=for-the-badge&labelColor=0b0f1a)
-![Mission](https://img.shields.io/badge/MISSION-TECH%20FOR%20HUMANITY-ff3df0?style=for-the-badge&labelColor=0b0f1a)
-![Status](https://img.shields.io/badge/STATUS-BUILDING-00ffa3?style=for-the-badge&labelColor=0b0f1a)
+<img src="assets/banner.svg" alt="Aryaman Anand. MSc AI at NTU Singapore. Agents, evals, grounded LLMs." width="100%"/>
 
 </div>
 
-<img src="assets/terminal.svg" alt="terminal intro" width="100%"/>
+I build and evaluate AI agents that have to work with real users. Before my **MSc in AI at NTU Singapore** I owned the architecture of production multi-agent voice and chat systems at Hotelzify and built the evaluation harness that scored live traffic turn by turn. I care about how AI systems behave outside the demo: **grounding, evaluation and safe failure.**
+
+**Looking for AI/ML internships from January 2027 and full-time roles from August 2027, in Singapore.**
+
+[Portfolio](https://v0-interactive-portfolio-website-wine.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/aryamananand) · [Email](mailto:aryaman.anand@gmail.com) · [Writing](https://app.notion.com/p/Where-We-Stand-Today-in-Conversational-AI-24573bda1b6980a7b4dff1c0bca3269b) · [Needle on Devpost](https://devpost.com/software/needle-0rae23) · [Tether demo](https://tether-care.vercel.app)
+
+<img src="assets/terminal.svg" alt="Needle official evaluator: HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785, zero LLM calls" width="100%"/>
 
 ---
 
-## 👋 Who I am
+## Selected work
 
-**AI/ML engineer building multi-agent LLM systems and voice pipelines.** I'm doing an **MSc in Artificial Intelligence at NTU Singapore (CCDS)**, started August 2026, and I'm working toward a Singapore internship and a full-time AI/ML role.
+### Needle: conversational search with no LLM
+*TikTok TechJam 2026, Track 4 · team entry · Aug to Sep 2026 · [Devpost](https://devpost.com/software/needle-0rae23)*
 
-Before that I spent **~16 months at Hotelzify** building production LLM systems for hospitality. I built a multilingual voice concierge, a multi-agent architecture live across **250+ hotel properties in 5 countries**, handling guest queries end to end in the guest's own language. Earlier: AI/ML engineering at **HyperVerge**.
+A shopping agent that finds one hidden product in a 50,000-item catalogue within ten conversational turns. It keeps a **ledger** of what the user wants, what they ruled out and what replaced what, instead of a raw transcript.
 
-I care less about leaderboard numbers and more about whether a system can be **trusted**: it grounds its answers, admits what it doesn't know, and holds up when the inputs get messy. My north star is simple: **use AI to solve problems that matter to people.**
+- Python standard library plus a SQLite index. Fully offline, **zero LLM calls, zero tokens**.
+- Official evaluator on 200 released sessions: **HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785**.
+- Negation is scoped to its clause, so "I wouldn't mind red", "I don't want red" and "anything but red" are told apart.
+- Dropped changes that scored higher on the released sessions but failed on held-out catalogues. That is the call I am proudest of.
+- My part: semantic robustness, the conversational storefront, and an independent reproduction of the official score.
+
+### Recova: RAG recommender with cited, verified answers
+*NTU AI6127 · six-person group project · Oct to Nov 2026*
+
+A retrieval-augmented appliance recommender: three recommendations with reasons, trade-offs and citations to review passages. Hybrid keyword and semantic search, cross-encoder reranking, a local LLM and a claim-level verifier over **2.3 million passages from 94,318 Amazon Appliances products**.
+
+- Reranking lifted **precision@3 from 0.542 to 0.664** and **nDCG@3 from 0.546 to 0.636** on 112 held-out queries, graded blind by six annotators (83% exact agreement, weighted kappa 0.931).
+- Claim-level verification cut unsupported claims from **13.8% to 6.4%**.
+- Every stage improved every metric. Known limit: retrieval misses cannot be recovered downstream.
+- My part: chunking, cross-encoder reranking and evidence selection.
+
+### EpistemicLLM: how many times must a model see a fact?
+*NTU AI6130 · six-person group project · Oct to Nov 2026*
+
+A controlled study on **600 invented facts**, taught 0, 1, 2, 5, 10 or 20 times and quizzed in wordings the model never saw. LoRA fine-tuning of Qwen2.5-0.5B-Instruct on a Colab T4.
+
+- Right answers build up gradually with no sudden switch. The steepest climb is between 2 and 5 lessons (**+46 points**).
+- Held up across three training seeds (spread up to about 9.5 points), a second invented world and swapped wordings.
+- Training taught the facts (49 of 100 right, from 0) but **removed abstention**: 32 "I don't know" answers fell to none, because every lesson showed an answer and none showed a refusal.
+- Adapting all seven linear layers instead of two lifted a pilot from about 15% to about 45%. About 75 automated tests.
+- My part: I designed and ran the exposure experiments and the analysis.
+
+### Tether: closing the loop on incidental clinical findings
+*Personal project · Jun 2026 to present · [Live demo](https://tether-care.vercel.app)*
+
+Over 60% of incidental medical findings are lost to follow-up. Tether explores AI after detection: coordination, reasoning, trust.
+
+- Retrieval-grounded patient assistant on the Claude API, with anti-hallucination constraints and a deterministic local fallback.
+- Interpretable risk classification: every result carries the rule that fired, its inputs and the guideline cited.
+- Domain-agnostic engine with pluggable specialty modules. Synthetic data only.
 
 ---
 
-## 🚀 What I'm working on right now
+## More projects
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🇮🇳 Make India Accountable
-A long-term civic accountability platform. The idea is to make public promises, spending and outcomes **legible and checkable** by anyone, so accountability stops depending on who shouts loudest.
-
-`civic-tech` `public-data` `transparency`
-
-</td>
-<td width="50%" valign="top">
-
-### ✈️ SENTINEL: Autonomous ATC
-A browser-based demo of an **automated London TMA** (Heathrow plus its four real holding stacks). Automation runs the routine work of a terminal sector: predicting conflicts about 2 minutes ahead, sequencing arrivals by wake category, handling handoffs and speaking ICAO clearances. Humans are pulled in only for the **critical few**, with a recommended action to Execute or Override.
-
-`agents` `planning` `safety-critical`
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
-
-### 🔭 Always scouting
-I'm actively looking for **more areas where technology and AI can genuinely help humanity**, in the public sector, safety-critical systems and anywhere people are underserved by their tools. If you know one, I want to hear about it.
-
-</td>
-</tr>
-</table>
-
-<details>
-<summary><b>🧪 Recent builds &amp; collaborations</b></summary>
-
-<br/>
-
-| Project | What it is | My part |
+| Project | What it is | Result or note |
 |---|---|---|
-| **ShieldCall** | AI-powered real-time phone call detection and shielding system (Python) | Creator |
-| **promptryt** | AI prompt co-pilot for ChatGPT, Claude, Gemini, Copilot, DeepSeek and Manus; generates Direct, Well Rounded and Technical prompt variants, no account needed (JavaScript) | Creator |
-| **Needle** (TechJam 2026, Track 4) | Conversational storefront and retrieval-driven recommender for a hackathon challenge | Semantic robustness research, independent result reproduction, robustness harness |
-| **SENTINEL** | Autonomous air traffic control demo on a live radar canvas: STCA conflict prediction, arrival sequencing, holding stacks, emergencies, voice R/T | Sole builder (10 JS modules, real flight physics) |
-| **Breast-cancer classifier** | SVM + MLP on WDBC with EER and ROC analysis | Full pipeline and evaluation |
-
-</details>
+| **Fuzzy-gated LSTM forecast** (NTU AI6124, two-person) | Pre-registered test of a fuzzy-gated LSTM next-day forecaster inside a moving-average trading rule on a Singapore REIT | A **negative result**, reported as one: frozen hashed protocol, one guarded run on the last 298 trading days, 156 tests. Forecast fell below the no-forecast lower bound at every cost level; two replications did not hold |
+| **[PromptRyt](https://github.com/AryamanAnand19/promptryt)** | Manifest V3 Chrome extension that turns a rough draft into three optimized prompts on ChatGPT, Claude, Gemini, Copilot, DeepSeek, Perplexity and Grok | No account or API key. 14 domains, up to 8 dimensions per prompt, four editor architectures |
+| **[Shield Call](https://github.com/AryamanAnand19/shieldcall)** | Real-time phone-call screening: a weighted rule engine plus an LLM agent that lets you intercept, whisper or take over a live call | Python, Docker |
+| **[Make India Accountable](https://github.com/AryamanAnand19/make-india-accountable)** | Long-term civic accountability platform that makes public promises, spending and outcomes checkable | In progress |
+| **SENTINEL** | Browser-based autonomous air traffic control demo for the London TMA: conflict prediction about 2 minutes ahead, arrival sequencing, handoffs, spoken ICAO clearances | Humans handle only the critical few, with an Execute or Override recommendation |
 
 ---
 
-## 🧭 The problems I chase
+## Experience
+
+| Role | When | What I did |
+|---|---|---|
+| **AI Product Analyst (Machine Learning Engineer)**, Hotelzify | Jun 2025 to Mar 2026 | Shipped a production LLM assistant (GPT-4, picked after side-by-side evaluation against GPT-5.2) handling about **3,000 calls and 1,500 chats a day**, with **82% resolved without human handoff** and about 11% of engaged leads converted to bookings. Designed subagent orchestration with an intent-classification router for room sales, upselling, F&B and payments. Built an evaluation harness scoring every flow and turn on live traffic. Engineered the speech layer: barge-in handling and a phoneme-level pronunciation dictionary across 40+ languages that cut name and location misrecognition by **71%**. Built a unified context engine across voice and Meta messaging that recovered **8%** of after-hours revenue |
+| **Technical Product Analyst Intern**, HyperVerge | Dec 2024 to May 2025 | Built an automated API testing platform in CI/CD with pre-production score gating, cutting deployment failures by **75%** across AML, face-match and identity-verification flows |
+| **Web Developer and Data Analyst Intern**, IntrCity | Oct to Dec 2023 | React and Leaflet dashboard of live bus operations across 80+ routes for the Dynamic Pricing team |
+| **Frontend Developer Intern**, DXC Technology | Aug to Oct 2023 | Part of the team that built a Smart Asset Management portal |
+
+---
+
+## Education
+
+**Nanyang Technological University, Singapore.** MSc Artificial Intelligence, College of Computing and Data Science. Aug 2026 to present.
+Semester one, each module with a controlled experiment:
+
+- **AI6103 Deep learning.** EfficientNetV2-S hyperparameter study on dog-breed classification; 120-run evaluation of a lightweight image classifier.
+- **AI6130 Large language models.** LLM benchmark evaluation; LoRA versus adapter fine-tuning on math reasoning; EpistemicLLM.
+- **AI6124 Neural and fuzzy systems.** SVM and MLP breast-cancer classifiers scored by EER and ROC; fuzzy, LVQ and POPFNN models; the pre-registered LSTM study.
+- **AI6127 Natural language processing.** Recova.
+- **AI6101 Reinforcement learning.** Q-learning agent for CliffBoxPushing.
+
+**Vellore Institute of Technology.** B.Tech Computer Science and Engineering, CGPA 8.25 / 10. 2021 to 2025.
+
+---
+
+## Research interests
 
 <div align="center">
 <img src="assets/work-graph.svg" alt="Map of my interests around one goal: AI you can trust" width="100%"/>
 </div>
 
-Everything on that map orbits one question: **how do we build AI that is right, verifiable and actually useful to people?**
-
-- **🧠 Reliable LLMs & evals.** Measuring whether a model tells the truth, and making it say "I don't know" when it should.
-- **🕸️ Multi-agent systems.** Orchestration, tool use and planning that survive contact with production.
-- **🗣️ Voice & multilingual AI.** Real-time systems that talk to people in their own language, at scale.
-- **🔎 Retrieval & RAG.** Getting the right evidence in front of the model and the right item in front of the user.
-- **✈️ Safety-critical autonomy.** Decisions where mistakes are unacceptable, so they have to be explainable and checkable.
-- **🏛️ AI for public good.** Civic tech and accountability, where transparency beats trust-me.
+Evaluation that predicts held-out behaviour · abstention and grounded generation · conversational and voice agents · parameter-efficient fine-tuning.
 
 ---
 
-## 🛠️ Toolbox
+## Skills and certifications
 
-<div align="center">
+**AI and LLM:** multi-agent orchestration, RAG, LLM evaluation, context engineering, guardrails, LangChain, MCP, LoRA.
+**ML and data:** PyTorch, CNN and LSTM, scikit-learn, Pandas, NumPy, Pinecone, Chroma.
+**Languages:** Python, TypeScript, JavaScript, SQL, C++.
+**Web and infra:** FastAPI, Flask, Next.js, React, Docker, AWS, GitHub Actions, Vercel.
 
-<img src="https://skillicons.dev/icons?i=py,cpp,js,ts,nodejs,react,nextjs,fastapi,pytorch,tensorflow,postgres,mongodb,redis,docker,aws,git,github,linux,bash,vscode" alt="Tech stack"/>
+**Anthropic certificates (2026):** Claude Code in Action · Introduction to Model Context Protocol · Model Context Protocol: Advanced Topics · Introduction to subagents · Introduction to agent skills · AI Fluency: Framework and Foundations.
 
-</div>
-
-<details>
-<summary><b>Background</b></summary>
-
-<br/>
-
-**Education**
-MSc Artificial Intelligence, Nanyang Technological University, Singapore. 2026 to 2027.
-B.Tech Computer Science and Engineering, VIT Vellore.
-
-**Experience**
-Hotelzify: multi-agent LLM systems, multilingual voice concierge (250+ hotels, 5 countries). ~16 months.
-HyperVerge: AI/ML engineering.
-
-**Based in** Singapore. From India.
-
-</details>
+**Writing:** [Where We Stand Today in Conversational AI](https://app.notion.com/p/Where-We-Stand-Today-in-Conversational-AI-24573bda1b6980a7b4dff1c0bca3269b), lessons from live voice agents in travel and hospitality.
 
 ---
 
-## 🐍 Contribution snake
-
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/AryamanAnand19/AryamanAnand19/output/snake-dark.svg" alt="Contribution snake" width="100%"/>
-
-</div>
-
----
-
-## 💬 Let's build something
-
-I'm happy to talk about LLM evals, retrieval, civic tech, or a problem you think AI *should* be solving.
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-aryaman.anand%40gmail.com-00f0ff?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0b0f1a)](mailto:aryaman.anand@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-connect-7c5cff?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0b0f1a)](https://www.linkedin.com/in/aryamananand)
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%" alt=""/>
-
-<sub><code>while alive: build(); learn(); ship()</code></sub>
+**Based in Singapore.** The quickest way to reach me is [email](mailto:aryaman.anand@gmail.com), or find me on [LinkedIn](https://www.linkedin.com/in/aryamananand).
 
 </div>
