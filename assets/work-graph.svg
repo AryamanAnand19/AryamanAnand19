@@ -31,18 +31,22 @@
     .lbl { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:15px; fill:#eaf2ff; letter-spacing:.2px; }
     .sub { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:11.5px; fill:#8fa3c7; letter-spacing:.4px; }
     .core { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:10.5px; fill:#dbe9ff; letter-spacing:3px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes breathe { 50% { transform:scale(1.08); } }
+    .p2{animation-delay:-1.2s}.p3{animation-delay:-2.4s}.p4{animation-delay:-3.6s}.p5{animation-delay:-4.8s}.p6{animation-delay:-6s}
+    @keyframes drift { 50% { transform:translateY(-3px); } }
+    @keyframes tw { 50% { opacity:.15; } }
+  
+    @media (prefers-reduced-motion: no-preference) {
     .rot1 { transform-origin:450px 236px; animation:spin 60s linear infinite; }
     .rot2 { transform-origin:450px 236px; animation:spin 90s linear infinite reverse; }
     .rot3 { transform-origin:450px 236px; animation:spin 45s linear infinite; }
-    @keyframes spin { to { transform:rotate(360deg); } }
     .breathe { transform-origin:450px 236px; animation:breathe 6s ease-in-out infinite; }
-    @keyframes breathe { 50% { transform:scale(1.08); } }
     .pill { animation:drift 7s ease-in-out infinite; }
-    .p2{animation-delay:-1.2s}.p3{animation-delay:-2.4s}.p4{animation-delay:-3.6s}.p5{animation-delay:-4.8s}.p6{animation-delay:-6s}
-    @keyframes drift { 50% { transform:translateY(-3px); } }
     .tw { animation:tw 4s ease-in-out infinite; } .tw2 { animation-delay:-1.3s } .tw3 { animation-delay:-2.6s }
-    @keyframes tw { 50% { opacity:.15; } }
-  </style>
+    }
+    @media (prefers-reduced-motion: reduce) { .flow { display:none; } }
+</style>
 
   <rect width="900" height="480" rx="18" fill="url(#bg)"/>
 
@@ -71,7 +75,7 @@
   <g fill="none" stroke="url(#rim)" stroke-width="1.2" stroke-opacity=".55">
     <use href="#pA"/><use href="#pB"/><use href="#pC"/><use href="#pD"/><use href="#pE"/><use href="#pF"/>
   </g>
-  <g fill="#fff">
+  <g fill="#fff" class="flow">
     <circle r="2.6" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pA"/></animateMotion></circle>
     <circle r="2.6" opacity=".95"><animateMotion dur="3.8s" begin=".6s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pB"/></animateMotion></circle>
     <circle r="2.6" opacity=".95"><animateMotion dur="3.4s" begin="1.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#pC"/></animateMotion></circle>

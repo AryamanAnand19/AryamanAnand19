@@ -16,8 +16,11 @@
       .a3 { animation-delay:2.2s } .a4 { animation-delay:2.6s } .a5 { animation-delay:3.2s }
     }
     @keyframes show { to { opacity:1; } }
+  
+    @media (prefers-reduced-motion: no-preference) {
     .cur { animation:blink 1s steps(1) infinite; } @keyframes blink { 50% { opacity:0; } }
-  </style>
+    }
+</style>
   <rect width="900" height="250" rx="16" fill="url(#glass)"/>
   <rect x=".5" y=".5" width="899" height="249" rx="15.5" fill="none" stroke="url(#rim)"/>
   <circle cx="26" cy="24" r="5.5" fill="#ff6b6b" opacity=".85"/><circle cx="46" cy="24" r="5.5" fill="#ffd166" opacity=".85"/><circle cx="66" cy="24" r="5.5" fill="#4dffb0" opacity=".85"/>

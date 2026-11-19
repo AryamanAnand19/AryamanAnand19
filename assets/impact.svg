@@ -18,16 +18,19 @@
   </defs>
   <style>
     .n { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:700; font-size:34px; fill:url(#num); letter-spacing:-.5px; }
-    .k { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:12.5px; fill:#dbe9ff; }
-    .s { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:11px; fill:#8fa3c7; letter-spacing:.3px; }
+    .k { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:14px; fill:#dbe9ff; }
+    .s { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-size:12.5px; fill:#8fa3c7; letter-spacing:.3px; }
     @media (prefers-reduced-motion: no-preference) {
       .t { opacity:0; animation:in .9s ease-out forwards; }
       .t2 { animation-delay:.25s } .t3 { animation-delay:.5s } .t4 { animation-delay:.75s }
     }
     @keyframes in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-    .sw { animation:sw 6s ease-in-out infinite; }
     @keyframes sw { 0% { transform:translateX(-200px); } 60%,100% { transform:translateX(1000px); } }
-  </style>
+  
+    @media (prefers-reduced-motion: no-preference) {
+    .sw { animation:sw 6s ease-in-out infinite; }
+    }
+</style>
   <rect width="900" height="150" rx="18" fill="url(#bg)"/>
   <rect x=".5" y=".5" width="899" height="149" rx="17.5" fill="none" stroke="#9fd0ff" stroke-opacity=".18"/>
   <rect x="0" y="0" width="160" height="1.5" fill="url(#sweep)" class="sw"/>

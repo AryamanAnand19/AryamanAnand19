@@ -23,17 +23,20 @@
     .role { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:500; font-size:19px; fill:#a9bddf; letter-spacing:.3px; }
     .pill { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:13px; fill:#dbe9ff; letter-spacing:.4px; }
     .eyebrow { font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif; font-weight:600; font-size:12px; fill:#7ea6ff; letter-spacing:3.5px; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes breathe { 50% { transform:scale(1.1); } }
+    @keyframes tw { 50% { opacity:.15; } }
+    @keyframes blink { 50% { opacity:.3; } }
+  
+    @media (prefers-reduced-motion: no-preference) {
     .r1 { transform-origin:730px 130px; animation:spin 70s linear infinite; }
     .r2 { transform-origin:730px 130px; animation:spin 45s linear infinite reverse; }
     .r3 { transform-origin:730px 130px; animation:spin 30s linear infinite; }
-    @keyframes spin { to { transform:rotate(360deg); } }
     .breathe { transform-origin:730px 130px; animation:breathe 6s ease-in-out infinite; }
-    @keyframes breathe { 50% { transform:scale(1.1); } }
     .tw { animation:tw 4s ease-in-out infinite; } .tw2 { animation-delay:-1.3s } .tw3 { animation-delay:-2.6s }
-    @keyframes tw { 50% { opacity:.15; } }
     .dot { animation:blink 2.4s ease-in-out infinite; }
-    @keyframes blink { 50% { opacity:.3; } }
-  </style>
+    }
+</style>
 
   <rect width="900" height="260" rx="18" fill="url(#bg)"/>
   <rect x=".5" y=".5" width="899" height="259" rx="17.5" fill="none" stroke="#9fd0ff" stroke-opacity=".18"/>
