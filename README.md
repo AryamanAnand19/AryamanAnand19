@@ -1,127 +1,239 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Aryaman Anand. MSc AI at NTU Singapore. Agents, evals, grounded LLMs." width="100%"/>
+<img src="assets/banner.svg" alt="Aryaman Anand. MSc AI at NTU Singapore. Agents, evals, grounded LLMs. Open to internships from January 2027 and full-time roles from August 2027." width="100%"/>
+
+<p>
+<a href="#featured-projects">Projects</a> ·
+<a href="#experience">Experience</a> ·
+<a href="#education">Education</a> ·
+<a href="#tech-stack">Stack</a> ·
+<a href="https://v0-interactive-portfolio-website-wine.vercel.app/">Portfolio</a> ·
+<a href="https://www.linkedin.com/in/aryamananand">LinkedIn</a> ·
+<a href="mailto:aryaman.anand@gmail.com">Email</a>
+</p>
 
 </div>
 
-I build and evaluate AI agents that have to work with real users. Before my **MSc in AI at NTU Singapore** I owned the architecture of production multi-agent voice and chat systems at Hotelzify and built the evaluation harness that scored live traffic turn by turn. I care about how AI systems behave outside the demo: **grounding, evaluation and safe failure.**
+**AI/ML engineer and MSc AI student at NTU Singapore.** I build and evaluate **LLM agents, RAG systems and voice AI** that have to work with real users. Before the MSc I owned the architecture of production **multi-agent** voice and chat systems at Hotelzify and built the **evaluation harness** that scored live traffic turn by turn.
 
-**Looking for AI/ML internships from January 2027 and full-time roles from August 2027, in Singapore.**
+I care about how AI behaves outside the demo: **grounding, evaluation and safe failure.**
 
-[Portfolio](https://v0-interactive-portfolio-website-wine.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/aryamananand) · [Email](mailto:aryaman.anand@gmail.com) · [Writing](https://app.notion.com/p/Where-We-Stand-Today-in-Conversational-AI-24573bda1b6980a7b4dff1c0bca3269b) · [Needle on Devpost](https://devpost.com/software/needle-0rae23) · [Tether demo](https://tether-care.vercel.app)
+> **Open to AI/ML internships from January 2027 and full-time roles from August 2027, in Singapore.** The quickest way to reach me is [email](mailto:aryaman.anand@gmail.com).
 
-<img src="assets/terminal.svg" alt="Needle official evaluator: HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785, zero LLM calls" width="100%"/>
+<img src="assets/impact.svg" alt="Impact at a glance: about 4,500 conversations a day in production; 82% resolved without human handoff; 0.9785 TechnicalScore on TikTok TechJam Needle; 71% fewer name and location misrecognitions across 40+ languages." width="100%"/>
+
+### Right now
+
+- **Studying** for an MSc in Artificial Intelligence at NTU (semester one: deep learning, LLMs, NLP, reinforcement learning, neural and fuzzy systems).
+- **Researching** why fine-tuned models stop saying "I don't know", and how to teach abstention back.
+- **Building** [Tether](https://tether-care.vercel.app), a grounded, explainable assistant for incidental clinical findings.
+- **Writing** about what live voice agents taught me: [Where We Stand Today in Conversational AI](https://app.notion.com/p/Where-We-Stand-Today-in-Conversational-AI-24573bda1b6980a7b4dff1c0bca3269b).
 
 ---
 
-## Selected work
+## Featured projects
 
-### Needle: conversational search with no LLM
-*TikTok TechJam 2026, Track 4 · team entry · Aug to Sep 2026 · [Devpost](https://devpost.com/software/needle-0rae23)*
+<table>
+<tr>
+<td width="50%" valign="top">
 
-A shopping agent that finds one hidden product in a 50,000-item catalogue within ten conversational turns. It keeps a **ledger** of what the user wants, what they ruled out and what replaced what, instead of a raw transcript.
+### [Needle](https://devpost.com/software/needle-0rae23)
+**Conversational product search with no LLM**
+<sub>TikTok TechJam 2026 · Track 4 · team entry</sub>
 
-- Python standard library plus a SQLite index. Fully offline, **zero LLM calls, zero tokens**.
-- Official evaluator on 200 released sessions: **HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785**.
-- Negation is scoped to its clause, so "I wouldn't mind red", "I don't want red" and "anything but red" are told apart.
-- Dropped changes that scored higher on the released sessions but failed on held-out catalogues. That is the call I am proudest of.
-- My part: semantic robustness, the conversational storefront, and an independent reproduction of the official score.
+Finds one hidden product in a **50,000-item catalogue** within ten conversational turns, using a ledger of wants, exclusions and replacements instead of a raw transcript.
 
-### Recova: RAG recommender with cited, verified answers
-*NTU AI6127 · six-person group project · Oct to Nov 2026*
+**HR@10 1.000 · MRR 0.9967 · TechnicalScore 0.9785 · 0 LLM calls**
 
-A retrieval-augmented appliance recommender: three recommendations with reasons, trade-offs and citations to review passages. Hybrid keyword and semantic search, cross-encoder reranking, a local LLM and a claim-level verifier over **2.3 million passages from 94,318 Amazon Appliances products**.
+`conversational search` `information retrieval` `evaluation` `Python` `SQLite`
 
-- Reranking lifted **precision@3 from 0.542 to 0.664** and **nDCG@3 from 0.546 to 0.636** on 112 held-out queries, graded blind by six annotators (83% exact agreement, weighted kappa 0.931).
-- Claim-level verification cut unsupported claims from **13.8% to 6.4%**.
-- Every stage improved every metric. Known limit: retrieval misses cannot be recovered downstream.
-- My part: chunking, cross-encoder reranking and evidence selection.
+</td>
+<td width="50%" valign="top">
 
-### EpistemicLLM: how many times must a model see a fact?
-*NTU AI6130 · six-person group project · Oct to Nov 2026*
+### Recova
+**RAG recommender with cited, verified answers**
+<sub>NTU AI6127 NLP · six-person team</sub>
 
-A controlled study on **600 invented facts**, taught 0, 1, 2, 5, 10 or 20 times and quizzed in wordings the model never saw. LoRA fine-tuning of Qwen2.5-0.5B-Instruct on a Colab T4.
+Hybrid **BM25 + dense retrieval** over **2.3M passages**, **cross-encoder reranking**, a local LLM and a claim-level verifier. Every recommendation cites the review passages behind it.
 
-- Right answers build up gradually with no sudden switch. The steepest climb is between 2 and 5 lessons (**+46 points**).
-- Held up across three training seeds (spread up to about 9.5 points), a second invented world and swapped wordings.
-- Training taught the facts (49 of 100 right, from 0) but **removed abstention**: 32 "I don't know" answers fell to none, because every lesson showed an answer and none showed a refusal.
+**nDCG@3 0.546 → 0.636 · unsupported claims 13.8% → 6.4%**
+
+`RAG` `hybrid search` `reranking` `FAISS` `faithfulness`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### EpistemicLLM
+**How many times must a model see a fact?**
+<sub>NTU AI6130 LLMs · six-person team</sub>
+
+A controlled **LoRA fine-tuning** study of **Qwen2.5-0.5B** on 600 invented facts. Accuracy grows gradually with exposure, but training **erased abstention** entirely.
+
+**+46 points from 2 to 5 exposures · "I don't know" 32 → 0**
+
+`hallucination` `abstention` `LoRA` `PEFT` `experiment design`
+
+</td>
+<td width="50%" valign="top">
+
+### [Tether](https://tether-care.vercel.app)
+**Closing the loop on incidental clinical findings**
+<sub>Personal project · ongoing</sub>
+
+Over 60% of incidental findings are lost to follow-up. Tether pairs a **retrieval-grounded assistant on the Claude API** with **interpretable, guideline-cited** risk classification.
+
+**Anti-hallucination constraints · deterministic fallback · synthetic data only**
+
+`Claude API` `grounding` `explainable AI` `Next.js`
+
+</td>
+</tr>
+</table>
+
+<img src="assets/terminal.svg" alt="Needle official evaluator output (team entry): HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785, zero LLM calls" width="100%"/>
+
+<details>
+<summary><b>Needle: engineering details</b></summary>
+
+<br/>
+
+- Python standard library plus a SQLite index. Fully offline, zero tokens, so it is cheap, fast and deterministic.
+- Official evaluator on 200 released sessions: HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785.
+- Negation is scoped to the clause it came from, so "I wouldn't mind red", "I don't want red" and "anything but red" are told apart.
+- We dropped changes that scored higher on the released sessions but failed on held-out catalogues, so the score reflects generalisation rather than overfitting to the public set.
+- **My part:** semantic robustness, the conversational storefront, and an independent reproduction of the official score.
+
+</details>
+
+<details>
+<summary><b>Recova: engineering details</b></summary>
+
+<br/>
+
+- Index of 2.3 million passages from 94,318 Amazon Appliances products, with stable passage IDs for citations.
+- nDCG@3 by stage on 112 held-out queries: BM25 0.461 → dense 0.524 → hybrid (RRF) 0.546 → hybrid + rerank 0.636. Every stage improved every metric.
+- Reranking lifted precision@3 from 0.542 to 0.664, graded blind by six annotators (83% exact agreement, weighted kappa 0.931).
+- Claim-level verification cut unsupported claims from 13.8% to 6.4%. About 59 seconds per query.
+- Known limit: a retrieval miss cannot be recovered downstream. Next: query normalisation and hard product-type constraints.
+- **My part:** chunking, cross-encoder reranking and evidence selection.
+
+</details>
+
+<details>
+<summary><b>EpistemicLLM: engineering details</b></summary>
+
+<br/>
+
+- 600 fictional facts across five question types, taught 0, 1, 2, 5, 10 or 20 times and quizzed in wordings never seen in training.
+- LoRA fine-tuning of Qwen2.5-0.5B-Instruct on a Colab T4. No sudden switch: the steepest climb is between 2 and 5 exposures (+46 points).
+- Robust across three training seeds (spread up to about 9.5 points), a second invented world and swapped wordings.
+- Training taught the facts (49 of 100 right, from 0) but removed abstention, from 32 "I don't know" answers to none, because every lesson showed an answer and none showed a refusal.
 - Adapting all seven linear layers instead of two lifted a pilot from about 15% to about 45%. About 75 automated tests.
-- My part: I designed and ran the exposure experiments and the analysis.
+- **My part:** designed and ran the exposure experiments and the analysis.
 
-### Tether: closing the loop on incidental clinical findings
-*Personal project · Jun 2026 to present · [Live demo](https://tether-care.vercel.app)*
+</details>
 
-Over 60% of incidental medical findings are lost to follow-up. Tether explores AI after detection: coordination, reasoning, trust.
+<details>
+<summary><b>Tether: engineering details</b></summary>
+
+<br/>
 
 - Retrieval-grounded patient assistant on the Claude API, with anti-hallucination constraints and a deterministic local fallback.
 - Interpretable risk classification: every result carries the rule that fired, its inputs and the guideline cited.
 - Domain-agnostic engine with pluggable specialty modules. Synthetic data only.
+- [Live demo](https://tether-care.vercel.app)
 
----
-
-## More projects
-
-| Project | What it is | Result or note |
-|---|---|---|
-| **Fuzzy-gated LSTM forecast** (NTU AI6124, two-person) | Pre-registered test of a fuzzy-gated LSTM next-day forecaster inside a moving-average trading rule on a Singapore REIT | A **negative result**, reported as one: frozen hashed protocol, one guarded run on the last 298 trading days, 156 tests. Forecast fell below the no-forecast lower bound at every cost level; two replications did not hold |
-| **[PromptRyt](https://github.com/AryamanAnand19/promptryt)** | Manifest V3 Chrome extension that turns a rough draft into three optimized prompts on ChatGPT, Claude, Gemini, Copilot, DeepSeek, Perplexity and Grok | No account or API key. 14 domains, up to 8 dimensions per prompt, four editor architectures |
-| **[Shield Call](https://github.com/AryamanAnand19/shieldcall)** | Real-time phone-call screening: a weighted rule engine plus an LLM agent that lets you intercept, whisper or take over a live call | Python, Docker |
-| **[Make India Accountable](https://github.com/AryamanAnand19/make-india-accountable)** | Long-term civic accountability platform that makes public promises, spending and outcomes checkable | In progress |
-| **SENTINEL** | Browser-based autonomous air traffic control demo for the London TMA: conflict prediction about 2 minutes ahead, arrival sequencing, handoffs, spoken ICAO clearances | Humans handle only the critical few, with an Execute or Override recommendation |
+</details>
 
 ---
 
 ## Experience
 
-| Role | When | What I did |
+### Hotelzify · AI Product Analyst (Machine Learning Engineer)
+<sub>Jun 2025 to Mar 2026 · hospitality voice and chat AI across five countries</sub>
+
+- Shipped a production **LLM assistant** handling about **3,000 calls and 1,500 chats a day**, with **82% resolved without human handoff** and about **11%** of engaged leads converted to bookings. Chose GPT-4 after a side-by-side evaluation against GPT-5.2.
+- Designed **multi-agent orchestration**: an intent-classification router sends each turn to subagents for room sales, upselling, F&B and payments, cutting latency and raising task accuracy over a single general prompt.
+- Built an **LLM evaluation harness** that scored every flow and turn on live traffic and turned failure patterns into prompt and dialogue-flow fixes.
+- Engineered the **real-time speech layer**: barge-in handling that separates backchannels from interruptions, and a phoneme-level TTS pronunciation dictionary across 40+ languages that cut name and location misrecognition by **71%**.
+- Built a unified **context engine** across voice and Meta messaging, persisting caller state for callback and upsell subagents, which recovered **8%** of after-hours revenue.
+
+### HyperVerge · Technical Product Analyst Intern
+<sub>Dec 2024 to May 2025 · identity verification and KYC/AML</sub>
+
+- Built an automated **API testing platform in CI/CD** (Postman, GitHub Actions) with pre-production score gating that blocked changes failing their baseline, cutting **deployment failures by 75%** across AML, face-match and identity-verification flows.
+- Extended regression coverage to AI-powered KYC and AML services used by BFSI clients.
+
+### Earlier internships
+- **IntrCity**, Web Developer and Data Analyst Intern (Oct to Dec 2023): React and Leaflet dashboard of live bus operations across 80+ routes for the Dynamic Pricing team.
+- **DXC Technology**, Frontend Developer Intern (Aug to Oct 2023): Smart Asset Management portal in React and Next.js.
+
+---
+
+## Also built
+
+| Project | What it is | Why it is interesting |
 |---|---|---|
-| **AI Product Analyst (Machine Learning Engineer)**, Hotelzify | Jun 2025 to Mar 2026 | Shipped a production LLM assistant (GPT-4, picked after side-by-side evaluation against GPT-5.2) handling about **3,000 calls and 1,500 chats a day**, with **82% resolved without human handoff** and about 11% of engaged leads converted to bookings. Designed subagent orchestration with an intent-classification router for room sales, upselling, F&B and payments. Built an evaluation harness scoring every flow and turn on live traffic. Engineered the speech layer: barge-in handling and a phoneme-level pronunciation dictionary across 40+ languages that cut name and location misrecognition by **71%**. Built a unified context engine across voice and Meta messaging that recovered **8%** of after-hours revenue |
-| **Technical Product Analyst Intern**, HyperVerge | Dec 2024 to May 2025 | Built an automated API testing platform in CI/CD with pre-production score gating, cutting deployment failures by **75%** across AML, face-match and identity-verification flows |
-| **Web Developer and Data Analyst Intern**, IntrCity | Oct to Dec 2023 | React and Leaflet dashboard of live bus operations across 80+ routes for the Dynamic Pricing team |
-| **Frontend Developer Intern**, DXC Technology | Aug to Oct 2023 | Part of the team that built a Smart Asset Management portal |
+| **Fuzzy-gated LSTM forecast**<br/><sub>NTU AI6124 · two-person</sub> | Pre-registered test of a fuzzy-gated LSTM next-day forecaster inside a moving-average trading rule on a Singapore REIT | Reported honestly as a **negative result**: frozen, hashed protocol, one guarded run on the last 298 trading days, 156 tests, two failed replications |
+| **[PromptRyt](https://github.com/AryamanAnand19/promptryt)**<br/><sub>Chrome extension</sub> | Prompt co-pilot that turns a rough draft into three optimized prompts on ChatGPT, Claude, Gemini, Copilot, DeepSeek, Perplexity and Grok | No account or API key. Detects intent and one of 14 domains; works across four editor architectures (React, ProseMirror, Quill/Lexical, plain text) |
+| **[Shield Call](https://github.com/AryamanAnand19/shieldcall)**<br/><sub>Voice AI</sub> | Real-time phone-call screening with a weighted rule engine and an LLM agent | Flags robocalls and lets you intercept, whisper or take over a live call |
+| **SENTINEL**<br/><sub>Autonomy demo</sub> | Browser-based autonomous air traffic control for the London TMA | Predicts conflicts about 2 minutes ahead, sequences arrivals, speaks ICAO clearances, escalates only the critical few to a human |
+| **[Make India Accountable](https://github.com/AryamanAnand19/make-india-accountable)**<br/><sub>Civic tech · in progress</sub> | Platform that makes public promises, spending and outcomes checkable by anyone | Accountability built on public data rather than on who shouts loudest |
 
 ---
 
 ## Education
 
-**Nanyang Technological University, Singapore.** MSc Artificial Intelligence, College of Computing and Data Science. Aug 2026 to present.
-Semester one, each module with a controlled experiment:
+**Nanyang Technological University, Singapore** · MSc Artificial Intelligence, College of Computing and Data Science · Aug 2026 to present
 
-- **AI6103 Deep learning.** EfficientNetV2-S hyperparameter study on dog-breed classification; 120-run evaluation of a lightweight image classifier.
-- **AI6130 Large language models.** LLM benchmark evaluation; LoRA versus adapter fine-tuning on math reasoning; EpistemicLLM.
-- **AI6124 Neural and fuzzy systems.** SVM and MLP breast-cancer classifiers scored by EER and ROC; fuzzy, LVQ and POPFNN models; the pre-registered LSTM study.
-- **AI6127 Natural language processing.** Recova.
-- **AI6101 Reinforcement learning.** Q-learning agent for CliffBoxPushing.
+| Module | Work | Keywords |
+|---|---|---|
+| AI6103 Deep learning | EfficientNetV2-S hyperparameter study on dog-breed classification; 120-run evaluation of a lightweight image classifier | `PyTorch` `CNN` `image classification` |
+| AI6130 Large language models | LLM benchmark evaluation; LoRA versus adapter fine-tuning on math reasoning; EpistemicLLM | `LoRA` `PEFT` `LLM evaluation` |
+| AI6127 Natural language processing | Recova RAG recommender with citations and claim-level verification | `RAG` `reranking` `retrieval` |
+| AI6124 Neural and fuzzy systems | SVM and MLP classifiers scored by EER and ROC; fuzzy, LVQ and POPFNN models; pre-registered LSTM study | `classification` `LSTM` `fuzzy systems` |
+| AI6101 Reinforcement learning | Q-learning agent for the CliffBoxPushing environment | `Q-learning` `RL` |
 
-**Vellore Institute of Technology.** B.Tech Computer Science and Engineering, CGPA 8.25 / 10. 2021 to 2025.
+**Vellore Institute of Technology** · B.Tech Computer Science and Engineering · CGPA 8.25 / 10 · 2021 to 2025
 
 ---
 
 ## Research interests
 
 <div align="center">
-<img src="assets/work-graph.svg" alt="Map of my interests around one goal: AI you can trust" width="100%"/>
+<img src="assets/work-graph.svg" alt="Research interests around one goal, trustworthy AI: reliable LLMs and evals, multi-agent systems, voice and multilingual AI, fine-tuning and abstention, retrieval and RAG, AI for public good." width="100%"/>
 </div>
 
-Evaluation that predicts held-out behaviour · abstention and grounded generation · conversational and voice agents · parameter-efficient fine-tuning.
+- **Evaluation that predicts held-out behaviour**, not just leaderboard scores.
+- **Abstention and grounded generation**: models that cite evidence and know when to say "I don't know".
+- **Conversational and voice agents** that hold up in production.
+- **Parameter-efficient fine-tuning** (LoRA, adapters) and what it does to model behaviour.
 
 ---
 
-## Skills and certifications
+## Tech stack
 
-**AI and LLM:** multi-agent orchestration, RAG, LLM evaluation, context engineering, guardrails, LangChain, MCP, LoRA.
-**ML and data:** PyTorch, CNN and LSTM, scikit-learn, Pandas, NumPy, Pinecone, Chroma.
-**Languages:** Python, TypeScript, JavaScript, SQL, C++.
-**Web and infra:** FastAPI, Flask, Next.js, React, Docker, AWS, GitHub Actions, Vercel.
+| Area | Tools and methods |
+|---|---|
+| **LLMs and agents** | Multi-agent orchestration · tool use · MCP · LangChain · prompt and context engineering · guardrails · Claude API · OpenAI API |
+| **Retrieval and evaluation** | RAG · hybrid search (BM25 + dense, RRF) · cross-encoder reranking · FAISS · Pinecone · Chroma · LLM evaluation · faithfulness checking |
+| **ML and fine-tuning** | PyTorch · LoRA / PEFT · CNN · LSTM · scikit-learn · Pandas · NumPy |
+| **Voice AI** | Real-time speech pipelines · barge-in handling · TTS pronunciation lexicons |
+| **Languages** | Python · TypeScript · JavaScript · SQL · C++ |
+| **Engineering** | FastAPI · Flask · Next.js · React · Docker · AWS · GitHub Actions · CI/CD · Vercel |
 
-**Anthropic certificates (2026):** Claude Code in Action · Introduction to Model Context Protocol · Model Context Protocol: Advanced Topics · Introduction to subagents · Introduction to agent skills · AI Fluency: Framework and Foundations.
-
-**Writing:** [Where We Stand Today in Conversational AI](https://app.notion.com/p/Where-We-Stand-Today-in-Conversational-AI-24573bda1b6980a7b4dff1c0bca3269b), lessons from live voice agents in travel and hospitality.
+**Certifications:** Anthropic (2026): Claude Code in Action · Introduction to Model Context Protocol · MCP: Advanced Topics · Introduction to subagents · Introduction to agent skills · AI Fluency: Framework and Foundations.
 
 ---
 
 <div align="center">
 
-**Based in Singapore.** The quickest way to reach me is [email](mailto:aryaman.anand@gmail.com), or find me on [LinkedIn](https://www.linkedin.com/in/aryamananand).
+### Let's talk
+
+If you are hiring for **AI/ML, LLM or applied research engineering** roles in Singapore, or want to compare notes on evals and agents, I would like to hear from you.
+
+[Email](mailto:aryaman.anand@gmail.com) · [LinkedIn](https://www.linkedin.com/in/aryamananand) · [Portfolio](https://v0-interactive-portfolio-website-wine.vercel.app/)
 
 </div>
