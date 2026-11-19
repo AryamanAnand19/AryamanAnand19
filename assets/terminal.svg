@@ -1,31 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250" role="img" aria-label="Terminal: official evaluator on Needle. HR@10 1.000, MRR 0.9967, TechnicalScore 0.9785, LLM calls 0.">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1220"/><stop offset="1" stop-color="#060912"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9fd0ff" stop-opacity=".7"/><stop offset=".5" stop-color="#b9a4ff" stop-opacity=".3"/><stop offset="1" stop-color="#7ef0ff" stop-opacity=".6"/>
+    </linearGradient>
+    <clipPath id="cmd"><rect x="0" y="0" width="0" height="40"><animate attributeName="width" from="0" to="600" begin="0.4s" dur="2.2s" fill="freeze" calcMode="discrete" keyTimes="0;1" values="0;600"/></rect></clipPath>
+  </defs>
   <style>
-    .t { font-family: Consolas,'Courier New',monospace; font-size: 17px; }
-    .p { fill: #00ffa3; } .c { fill: #7c8aa8; } .k { fill: #ff3df0; } .v { fill: #00f0ff; } .w { fill: #e6edf3; }
-    .l { opacity: 0; }
-    .l1 { animation: show .01s 0.4s forwards; }
-    .l2 { animation: show .01s 1.4s forwards; }
-    .l3 { animation: show .01s 2.2s forwards; }
-    .l4 { animation: show .01s 3.0s forwards; }
-    .l5 { animation: show .01s 3.8s forwards; }
-    .l6 { animation: show .01s 4.6s forwards; }
-    .l7 { animation: show .01s 5.4s forwards; }
-    @keyframes show { to { opacity: 1; } }
-    .cur { animation: blink 1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+    .m { font-family:Consolas,'SF Mono','Courier New',monospace; font-size:17px; }
+    .p { fill:#7ef0ff; } .d { fill:#7f8fb0; } .w { fill:#e6eefc; } .g { fill:#4dffb0; } .b { fill:#9fb8ff; }
+    .l { opacity:0; }
+    .a1 { animation:show .01s 3.0s forwards; } .a2 { animation:show .01s 3.5s forwards; }
+    .a3 { animation:show .01s 4.0s forwards; } .a4 { animation:show .01s 4.5s forwards; }
+    .a5 { animation:show .01s 5.2s forwards; }
+    @keyframes show { to { opacity:1; } }
+    .cur { animation:blink 1s steps(1) infinite; } @keyframes blink { 50% { opacity:0; } }
   </style>
-  <rect width="900" height="300" rx="12" fill="#0d1117" stroke="#30363d"/>
-  <rect width="900" height="36" rx="12" fill="#161b22"/>
-  <circle cx="24" cy="18" r="6" fill="#ff5f56"/><circle cx="46" cy="18" r="6" fill="#ffbd2e"/><circle cx="68" cy="18" r="6" fill="#27c93f"/>
-  <text x="380" y="23" class="t c" font-size="13">aryaman@world: ~</text>
+  <rect width="900" height="250" rx="16" fill="url(#glass)"/>
+  <rect x=".5" y=".5" width="899" height="249" rx="15.5" fill="none" stroke="url(#rim)"/>
+  <circle cx="26" cy="24" r="5.5" fill="#ff6b6b" opacity=".85"/><circle cx="46" cy="24" r="5.5" fill="#ffd166" opacity=".85"/><circle cx="66" cy="24" r="5.5" fill="#4dffb0" opacity=".85"/>
+  <text x="450" y="29" text-anchor="middle" class="m d" font-size="12">needle · official evaluator</text>
+  <line x1="0" y1="44" x2="900" y2="44" stroke="#9fd0ff" stroke-opacity=".1"/>
 
-  <g class="t">
-    <text x="24" y="70"  class="l l1"><tspan class="p">$</tspan> <tspan class="w">whoami</tspan></text>
-    <text x="24" y="94"  class="l l2 v">aryaman — AI/ML engineer &amp; student, builder of things that should exist</text>
-    <text x="24" y="128" class="l l3"><tspan class="p">$</tspan> <tspan class="w">cat now.json</tspan></text>
-    <text x="24" y="152" class="l l4"><tspan class="c">{</tspan> <tspan class="k">"building"</tspan><tspan class="c">:</tspan> <tspan class="v">["Make India Accountable", "automated air traffic controller"]</tspan><tspan class="c">,</tspan></text>
-    <text x="24" y="176" class="l l5">  <tspan class="k">"obsessed_with"</tspan><tspan class="c">:</tspan> <tspan class="v">["LLM reliability", "RAG", "agents"]</tspan><tspan class="c">,</tspan></text>
-    <text x="24" y="200" class="l l6">  <tspan class="k">"looking_for"</tspan><tspan class="c">:</tspan> <tspan class="v">"problems worth solving for humanity"</tspan> <tspan class="c">}</tspan></text>
-    <text x="24" y="242" class="l l7"><tspan class="p">$</tspan> <tspan class="w">./collaborate --with you</tspan><tspan class="cur w"> █</tspan></text>
+  <g class="m">
+    <g transform="translate(32 78)">
+      <text x="0" y="0" class="p">$</text>
+      <g clip-path="url(#cmd)" transform="translate(0 -20)"><text x="24" y="20" class="w">python eval.py --track needle --sessions 200</text></g>
+    </g>
+    <text x="32" y="126" class="l a1"><tspan class="d">HR@10            </tspan><tspan class="g">1.0000</tspan></text>
+    <text x="32" y="152" class="l a2"><tspan class="d">MRR              </tspan><tspan class="g">0.9967</tspan></text>
+    <text x="32" y="178" class="l a3"><tspan class="d">TechnicalScore   </tspan><tspan class="g">0.9785</tspan></text>
+    <text x="32" y="204" class="l a4"><tspan class="d">LLM calls        </tspan><tspan class="b">0</tspan><tspan class="d">   (offline · SQLite · zero tokens)</tspan></text>
+    <text x="32" y="232" class="l a5"><tspan class="p">$</tspan><tspan class="cur w"> █</tspan></text>
   </g>
 </svg>
